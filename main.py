@@ -21,6 +21,8 @@ class PopulationData:
     
     def sort_countries_by_area(self):
         return sorted(self.countries, key=lambda x: x.area, reverse=True) 
+    def sort_countries_by_population(self):
+        return sorted(self.countries, key=lambda x: x.population, reverse=True)
 
 def main():
     file_path = 'countriesAndPopulation.txt'
