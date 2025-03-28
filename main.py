@@ -18,10 +18,15 @@ class PopulationData:
                 country, area, population = line.strip().split(', ')
                 data.append(Country(country, area, population))
         return data
+    
+    def sort_countries_by_area(self):
+        return sorted(self.countries, key=lambda x: x.area, reverse=True) 
 
 def main():
     file_path = 'countriesAndPopulation.txt'
     population_data = PopulationData(file_path)
     population_data.print_sorted_data()
+
+
 if __name__ == "__main__":
     main()
