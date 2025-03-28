@@ -23,11 +23,23 @@ class PopulationData:
         return sorted(self.countries, key=lambda x: x.area, reverse=True) 
     def sort_countries_by_population(self):
         return sorted(self.countries, key=lambda x: x.population, reverse=True)
+    
+    def display_sorted_countries(self):
+        print("Сортування за площею (від найбільшої до найменшої):")
+        sorted_by_area = self.sort_countries_by_area()
+        for country in sorted_by_area:
+            print(country)
+
+        print("\nСортування за населенням (від найбільшого до найменшого):")
+        sorted_by_population = self.sort_countries_by_population()
+        for country in sorted_by_population:
+            print(country)
+
 
 def main():
     file_path = 'countriesAndPopulation.txt'
     population_data = PopulationData(file_path)
-    population_data.print_sorted_data()
+    population_data.display_sorted_countries()
 
 
 if __name__ == "__main__":
